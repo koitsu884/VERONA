@@ -1,0 +1,65 @@
+/* =================================================================
+		Reset Styles
+================================================================= */
+html, body, div, h1, h2, h3, h4, h5, h6,
+p, ul, ol, li, dl, dt, dd,
+table, th, td,
+form {
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* Base Styles */
+body{
+	font-family:Times New Roman;
+	height: 100%;
+}
+
+html{
+	height:100%;
+}
+
+
+/*	Basic Text Link	*/
+a {
+	color:#222222;
+}
+
+a:hover
+{
+	color:#BBBB00;
+}
+
+.float
+{
+	float:left;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+table
+{
+	border:solid 2px black;
+	padding:0;
+}
+th
+{
+	background-color:#0066FF;
+	color:white;
+	margin:0;
+	padding:3px;
+}
+td
+{
+	padding:3px;
+	margin:0;
+	border:solid 1px black;
+}

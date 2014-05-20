@@ -1,0 +1,30 @@
+#container
+{
+	min-width:1200px;
+}
+
+#menu
+{
+	float:left;
+	width:120px;
+}
+#contents
+{
+	min-width:1050px;
+	float:left;
+}
+
+#footer
+{
+clear:both;
+}
+
+.label
+{
+	border-style: none; :none;
+}
+
+.err
+{
+	color:red;
+}

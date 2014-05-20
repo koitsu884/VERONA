@@ -1,0 +1,324 @@
+/*=============================================
+ Index
+ =============================================*/
+
+#topImage
+{
+	width:640px;
+	height:350px;
+	margin:10px auto;
+	border-radius: 10px;
+	border:solid 2px #888888;
+	box-shadow: 6px 6px 6px #888888;
+}
+#topImage img
+{
+	z-index:0;
+}
+
+#topBanners li
+{
+	width:640px;
+	height:100px;
+	margin:5px auto;
+	border:solid 2px #483224;
+}
+
+#topBanners li:hover
+{
+	border:solid 2px #AA8888;
+}
+
+#side
+{
+float:left;
+width:280px;
+padding:5px;
+}
+
+#main
+{
+float:left;
+width:670px;
+padding:10px;
+}
+
+#bottom
+{
+	clear:both;
+}
+
+.imageBox
+{
+	margin:2px;
+	position:relative;
+	padding:0;
+	background: #483224;
+	color:white;
+	border: solid 4px #483224;
+}
+
+.topnewsMark {
+	position:absolute;
+	left: 0;
+	top: 0;
+	padding:0;
+	margin:0;
+	z-index: 50;
+}
+
+.topnewsPhoto {
+
+	overflow: hidden;
+	background: #fff;
+}
+
+ul#news_list
+{
+	margin:10px;
+}
+
+#news_list li
+{
+	/*width:250px;*/
+	/*height:250px;*/
+	/*float:left;*/
+}
+
+/*=============================================
+ Registration
+ =============================================*/
+#regiTable
+{
+	width:600px;
+}
+#regiTable td.left
+{
+	width:200px;
+}
+
+/*=============================================
+ MyPage
+ =============================================*/
+ .myPageLeft
+ {
+ 	float:left;
+ 	width:200px;
+ 	margin:20px;
+ }
+ 
+ .myPageRight
+ {
+ 	float:left;
+ 	width:650px;
+ 	margin:10px;
+ }
+ 
+ /*=============================================
+ OrderHistory
+ =============================================*/
+.orderHistory
+{
+	width:100%;
+}
+.orderHistory tr
+{
+	border:solid 1px #FFCC99;
+	margin:0;
+	padding:1px;
+}
+
+
+.orderDetailBox  img
+{
+	height:50px;
+	float:left;
+}
+ 
+/*=============================================
+ Contact us
+ =============================================*/
+ #shopLogo
+ {
+ 	width:150px;
+ }
+ #shopImage
+ {
+	 border:solid 1px #483224;
+	 padding:5px;
+	 margin:auto;
+ }
+ 
+ #map
+ {
+ float:right;
+ margin:10px;
+ border: solid 4px #483224;
+ width:550px;
+ height:350px;
+ }
+ 
+ #companyInfo
+ {
+ width:400px;
+ float:left;
+ margin:10px auto;
+ }
+  /*=============================================
+ Products
+ =============================================*/
+ #chooseFilter
+ {
+	width:250px;
+	float:left;
+ }
+ 
+ /*#chooseFilter li{
+	font-weight: bold;
+	width:100%;
+	padding:2px;
+}
+
+#chooseFilter li a{
+color: black;
+display:block;
+}
+
+#chooseFilter li:hover
+{
+	background: #F3D673;
+	position: relative;
+}*/
+ 
+ #product_table
+{
+	border:2px solid #FFCC99;
+	width:700px;
+	float:left;
+}
+
+#product_table img
+{
+ width:150px;
+ height:150px;
+}
+ #product_table td
+ {
+	margin:4px;
+	padding:4px;
+ }
+ 
+#product_table h4
+{
+	font-weight:bold;
+	font-size:20px;
+}
+
+#product_menu
+{
+text-align:center;
+margin:10px;
+}
+
+/*ul#product_menu li{
+	font-weight: bold;
+	float: left;
+	width:150px;
+	padding:5px;
+}
+
+ul#product_menu li a{
+color: black;
+display:block;
+}
+
+ul#product_menu li:hover
+{
+	background: #F3D673;
+	position: relative;
+}*/
+ /*=============================================
+ Product detail
+ =============================================*/
+ #productInfo
+ {
+ 	float:left;
+ 	width:400px;
+ 	margin:10px;
+ }
+ 
+ #productImage
+ {
+ 	float:left;
+ 	width:500px;
+ 	margin:10px;
+ }
+  #productImage img
+  {
+  	width:480px;
+  }
+ 
+ /*=============================================
+ About us
+ =============================================*/
+ #aboutus_image
+ {
+	margin:10px;
+	padding:10px;
+	width:400px;
+	float:left;
+	 border: solid 2px #483224;
+ }
+ /*=============================================
+ Shopping cart
+ =============================================*/
+ #shoppingCart
+ {
+	float:left;
+	width:600px;
+	margin:10px;
+ }
+ #control
+ {
+	float:left;
+	width:300px;
+	margin:10px;
+ }
+  /*=============================================
+ Billing
+ =============================================*/
+ #cartInfo
+ {
+	float:left;
+	width:500px;
+	padding:20px;
+ }
+ #cartInfo table
+ {
+	width:100%;
+ }
+ 
+ #billingInfo
+ {
+	float:left;
+	padding:20px;
+ }
+ 
+  /*=============================================
+ Invoice
+ =============================================*/
+ #invoice
+ {
+ 	width:600px;
+ 	margin:auto;
+ }
+ 
+ #invoice table
+ {
+	text-align:center;
+ }
+ 
+ #invoice tr
+ {
+	border: solid 1px #483224;
+ }
