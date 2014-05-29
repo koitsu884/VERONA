@@ -2,10 +2,8 @@
 	//Start session
 	session_start();
 	//Include database connection details
-	require_once('includes/dbConection.php');
-	require_once('includes/funcShoppingCart.php');
-	require_once('includes/functions.php');
-	//include('includes/dump_variables.php');
+	include('includes/dbConection.php');
+	include('includes/functions.php');
 
 	$msg="";
 	if(!empty($_REQUEST))
@@ -32,21 +30,13 @@
 			}
 		}
 	}
-	
-	do_html_header("Shopping Cart");
 ?>
-</head>
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Shopping cart</title>
-<link href="css/default.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="css/layout.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>	
-<script type="text/javascript" src="js/jquery.dropdownPlain.js"></script>
-</head>-->
-
+<?php include 'common.html'; ?>
+</head>
 <script language="javascript">
 	function del(pid){
 		if(confirm('Do you really mean to delete this item?')){

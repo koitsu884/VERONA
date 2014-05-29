@@ -1,17 +1,9 @@
-<?php 
-	session_start();
-	require_once('includes/functions.php');
-	do_html_header("Home");
-?>
-<!--<!DOCTYPE html>
+<?php session_start();?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Home</title>
-<link href="css/default.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="css/layout.css" rel="stylesheet" type="text/css">
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.dropdownPlain.js"></script>-->
+<?php include 'common.html'; ?>
 
 <script src="js/jquery.slides.min.js"></script>
 <script>
@@ -39,7 +31,7 @@ $(function() {
   });
 });
 </script>
-</head>
+
 <body>
 <div id="container">
 	<div id="header">

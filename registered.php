@@ -3,11 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Registration</title>
-<link href="css/default.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="css/layout.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>	
-<script type="text/javascript" src="js/jquery.dropdownPlain.js"></script>
+<?php include 'common.html'; ?>
 </head>
 <body>
 <div id="container">

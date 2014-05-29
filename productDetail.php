@@ -7,6 +7,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php
+
+	/*require('config.php');
+	
+	//Connect to mysql server
+	mysql_connect(DB_HOST, DB_USER, DB_PASSWORD) or die("Database Connection failed: " . mysql_error());
+	//Select database
+	mysql_select_db(DB_DATABASE) or die("Database Connection failed: " . mysql_error());*/
+	//Query
 	$prodID = $_GET["id"];
 	$query="SELECT * FROM product WHERE ProductID=".$prodID;
 	$result=mysql_query($query);
@@ -23,11 +31,7 @@
 ?>
 <head>
 <title>Products Detail</title>
-<link href="css/default.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="css/layout.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>	
-<script type="text/javascript" src="js/jquery.dropdownPlain.js"></script>
+<?php include 'common.html'; ?>
 </head>
 <body>
 <div id="container">

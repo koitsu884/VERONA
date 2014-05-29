@@ -14,15 +14,20 @@
 			</form><p><a href='/Verona/registration.php'>Make new account</a></p>";
 		}
 	?>
-
+	<div class="err">
 	<?php
-	if( isset($_SESSION['LOGIN_ERROR'])) 
+	if( isset($_SESSION['LOGIN_ERROR']) && is_array($_SESSION['LOGIN_ERROR']) && count($_SESSION['LOGIN_ERROR']) > 0 ) 
 	{
-		echo '<span class="red">'.$_SESSION['LOGIN_ERROR'].'</span>';
+		echo '<ul class="err">';
+		foreach($_SESSION['LOGIN_ERROR'] as $msg) 
+		{
+			echo '<li>',$msg,'</li>'; 
+		}
+		echo '</ul>';
 		unset($_SESSION['LOGIN_ERROR']);
 	}
 	?>
-
+	</div>
 </div>
 <div id="scart_link">
 	<table>

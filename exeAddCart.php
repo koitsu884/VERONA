@@ -2,8 +2,8 @@
 	//Start session
 	session_start();
 	//Include database connection details
-	require_once('includes/dbConection.php');
-	require_once('includes/funcShoppingCart.php');
+	include('includes/dbConection.php');
+	include('includes/functions.php');
 	
 	$pid = $_GET['id'];
 	$qty = $_POST['quantity'];

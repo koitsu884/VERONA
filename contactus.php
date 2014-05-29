@@ -16,14 +16,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Contact us</title>
-<link href="css/default.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="css/layout.css" rel="stylesheet" type="text/css">
+<?php include 'common.html'; ?>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script type="text/javascript" src="js/googleMap.js"></script>
-<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>	
-<script type="text/javascript" src="js/jquery.dropdownPlain.js"></script>
-<script type="text/javascript" src="js/validation.js"></script>
+
 
 </head>
 <body>
@@ -49,7 +45,7 @@
 		<h3>Feed back form</h3>
 		<p>To send us an enquiry please fill in the following form, and we will endeavour to reply within 24 hours</p>
 		<br/>
-		<form method="post" action="feedback.php" onsubmit="return contactFormValidator()">
+		<form method="post" action="feedback.php">
 		<table>
 		<tr><th>Your Email<span class="red">*</span></th><td><input type="text" name = "email" <?php if(isset($member)) echo "value='".$member['Email']."'"?>></td></tr>
 		<tr><th>Last name<span class="red">*</span></th><td><input type="text" name = "lname" <?php if(isset($member)) echo "value='".$member['LastName']."'"?>></td></tr>

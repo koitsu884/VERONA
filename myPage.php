@@ -30,12 +30,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>User Information</title>
-<link href="css/default.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="css/layout.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>	
-<script type="text/javascript" src="js/jquery.dropdownPlain.js"></script>
-<script type="text/javascript" src="js/validation.js"></script>
+<?php include 'common.html'; ?>
+<script type="text/javascript" src="js/register.js"></script>
 </head>
 <body>
 <div id="container">
@@ -47,16 +43,14 @@
 		<h2>My page</h2>
 		<div class="err">
 		<?php
-		if( isset($_SESSION['ERRMSG']))
-		{
-			$errMsg=  $_SESSION['ERRMSG'];
-			unset($_SESSION['ERRMSG']);
-		}
 		if($errMsg != "")
 		{
-		
 			displayErrorAndExit($errMsg);
-			
+		}
+		if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) > 0 ) 
+		{
+			displayErrorArrayAndExit($_SESSION['ERRMSG_ARR']);
+			unset($_SESSION['ERRMSG_ARR']);
 		}
 		?>
 		</div>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Feedback</title>
-<?php require 'config.html' ?>
+<?php include 'common.html'; ?>
 </head>
 <body>
 <div id="container">

@@ -1,11 +1,12 @@
 <?php session_start();
 	include('includes/dbConection.php');
 	include('includes/functions.php');
+	date_default_timezone_set('America/New_York');
 	//Query
 	$query = "";
 	$errMsg = "";
 	$num = 0;
-	$today = date('Y-m-d');
+	$today = gmdate('Y-m-d');
 	
 	if( !isset($_SESSION['SESS_MEMBER_ID']))
 	{
@@ -25,7 +26,7 @@
 			if(isset($_GET['search']))
 			{
 				$time = "2013-01-01";
-				$timestr=date('y-m-d',strtotime($time));
+				$timestr=gmdate('y-m-d',strtotime($time));
 				$errMsg = $timestr;
 				$where .= " AND orderDate > $timestr";
 			}
@@ -53,11 +54,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>My page</title>
-<link href="css/default.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="css/layout.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>	
-<script type="text/javascript" src="js/jquery.dropdownPlain.js"></script>
+<?php include 'common.html'; ?>
 <script type="text/javascript" src="js/register.js"></script>
 </head>
 <body>
@@ -88,7 +85,7 @@
 		</ul>
 		</div>
 		<div class="myPageRight">
-		<!--<p>Search:
+		<!-- <p>Search:
 		<select onChange="window.location='orderHistory.php?search='+this.value">
 		<option>ALL</option>
 		<option>Last 30 days</option>
@@ -99,40 +96,33 @@
 		</p>-->
 		<table class="table1 orderHistory">
 		<?php
-			if($num == 0)
+			$prevOrderID = -1;
+			for($i = 0; $i < $num; $i++)
 			{
-				echo "<div>There are no items</div>";
-			}
-			else
-			{
-				$prevOrderID = -1;
-				for($i = 0; $i < $num; $i++)
+				$itemCnt = mysql_result($result,$i,"itemCount");
+				$orderID = mysql_result($result,$i,"orderID");
+				$orderDate = mysql_result($result,$i,"orderDate");
+				$price = mysql_result($result,$i,"Price");
+				$quantity = mysql_result($result,$i,"quantity");
+				$productTotal = $price * $quantity;
+				$total = mysql_result($result,$i,"totalPrice");
+				$name = mysql_result($result,$i,"Name");
+				$imageURL = mysql_result($result,$i,"ImageURL");
+				
+				if( $prevOrderID != $orderID)
 				{
-					$itemCnt = mysql_result($result,$i,"itemCount");
-					$orderID = mysql_result($result,$i,"orderID");
-					$orderDate = mysql_result($result,$i,"orderDate");
-					$price = mysql_result($result,$i,"Price");
-					$quantity = mysql_result($result,$i,"quantity");
-					$productTotal = $price * $quantity;
-					$total = mysql_result($result,$i,"totalPrice");
-					$name = mysql_result($result,$i,"Name");
-					$imageURL = mysql_result($result,$i,"ImageURL");
 					
-					if( $prevOrderID != $orderID)
-					{
-						
-						echo"<tr><td rowspan = '$itemCnt'><p>OrderID:$orderID</p><p>OrderDate:$orderDate</p><p><b>Order Total:$$total</b></p></td>
-							";
-						$prevOrderID = $orderID;
-					}
-					else
-					{
-						echo "<tr>";
-					}
-					echo "<td><div class='orderDetailBox'><img src='images/products/thumb_$imageURL'/>";
-					echo "<p><b>$name</b></p><p>Price:$$price&nbsp&nbsp&nbsp&nbspQuantity:$quantity&nbsp&nbsp&nbsp&nbspTotal:$$productTotal</p></div>";
-					echo "</td></tr>";
+					echo"<tr><td rowspan = '$itemCnt'><p>OrderID:$orderID</p><p>OrderDate:$orderDate</p><p><b>Order Total:$$total</b></p></td>
+						";
+					$prevOrderID = $orderID;
 				}
+				else
+				{
+					echo "<tr>";
+				}
+				echo "<td><div class='orderDetailBox'><img src='images/products/thumb_$imageURL'/>";
+				echo "<p><b>$name</b></p><p>Price:$$price&nbsp&nbsp&nbsp&nbspQuantity:$quantity&nbsp&nbsp&nbsp&nbspTotal:$$productTotal</p></div>";
+				echo "</td></tr>";
 			}
 		?>
 		</table>

@@ -1,17 +1,10 @@
-<?php
-	session_start();
-	require_once 'includes/functions.php';
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Registration</title>
-<link href="css/default.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="css/layout.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>	
-<script type="text/javascript" src="js/jquery.dropdownPlain.js"></script>
-<script type="text/javascript" src="js/validation.js"></script>	
+<?php include 'common.html'; ?>
+<script type="text/javascript" src="js/register.js"></script>	
 </head>
 <body>
 <div id="container">
@@ -21,9 +14,9 @@
 	</div><!--  end header -->
 	<div id="main_contents">
 		<h2>Registration</h2>
-
+		<div class="err">
 		<?php
-		/*if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) > 0 ) 
+		if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) > 0 ) 
 		{
 			echo '<ul class="err">';
 			foreach($_SESSION['ERRMSG_ARR'] as $msg) 
@@ -32,15 +25,9 @@
 			}
 				echo '</ul>';
 			unset($_SESSION['ERRMSG_ARR']);
-		}*/
-		if( isset($_SESSION['ERRMSG_ARR'])) 
-		{
-			displayError($_SESSION['ERRMSG_ARR']);
-			//echo '<div class="err">'.$_SESSION['ERRMSG_ARR']."</div>";
-			unset($_SESSION['ERRMSG_ARR']);
 		}
 		?>
-
+		</div>
 		<p>Please fill in all information on the table bellow</p>
 		<form method = 'post' action = 'exe_registration.php' onsubmit="return formValidator()">
 		<table id="regiTable" class="table1 center">
